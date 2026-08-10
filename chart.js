@@ -162,17 +162,31 @@ function drawChart(stats) {
 
           pointLabels: {
 
-            color: "#ffffff",
+  color: "#ffffff",
 
-            font: {
+  padding: 12,
 
-              family: "Georgia",
+  font: function(context) {
 
-              size: 14,
+    const width = window.innerWidth;
 
-              weight: "bold"
+    let size = 14;
 
-            }
+    if (width <= 700) {
+      size = 12;
+    }
+
+    if (width <= 450) {
+      size = 10;
+    }
+
+    return {
+      family: "Georgia",
+      size: size,
+      weight: "bold"
+    };
+
+  }
 
           }
 
